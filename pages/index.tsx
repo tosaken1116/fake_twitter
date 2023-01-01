@@ -2,7 +2,7 @@ import { Box, Stack } from "@mui/material";
 import type { NextPage } from "next";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Search from "./components/Search";
+import Notification from "./components/Notification";
 import TweetButton from "./components/TweetButton";
 
 const Home: NextPage = () => {
@@ -18,7 +18,8 @@ const Home: NextPage = () => {
                 }}
             >
                 {/* <TweetHome></TweetHome> */}
-                <Search />
+                {/* <Search /> */}
+                <Notification />
             </Box>
             <TweetButton />
             <Footer />

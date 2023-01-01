@@ -18,6 +18,8 @@ export default function Tweet({
     viewCount,
     tweeted,
     isLocked,
+    tweetType,
+    replyTo,
 }: TweetPropsType) {
     return (
         <Stack direction="row" spacing={0.5} sx={{ width: "100vw" }} p={1}>
@@ -44,6 +46,16 @@ export default function Tweet({
                     </Typography>
                     <MoreHorizIcon sx={{ fontSize: "24px" }} />
                 </Stack>
+                {tweetType == "reply" ? (
+                    <Stack direction="row">
+                        <Typography>返信先:</Typography>
+                        <Typography sx={{ color: "#1DA1F2" }}>
+                            @{replyTo}さん
+                        </Typography>
+                    </Stack>
+                ) : (
+                    <></>
+                )}
                 <Typography>{context}</Typography>
                 <Grid container direction="row" flexGrow={1} spacing={3.6}>
                     <Grid item>
