@@ -36,3 +36,7 @@ export type MessageRowProps = {
 export type MessageRequestProps = {
     requestNumber: number;
 };
+export type FooterProps = {
+    setNowPageName: (nowPage: string) => void;
+    nowPage: String;
+};
