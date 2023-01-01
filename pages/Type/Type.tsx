@@ -24,3 +24,15 @@ export type NonReplyNotificationProps = {
 export type NotificationRowProps = {
     contents: NonReplyNotificationProps | TweetPropsType;
 };
+
+export type MessageRowProps = {
+    icon: string;
+    userName: string;
+    userId: string;
+    context: string;
+    lastContact: string;
+    isLocked: boolean;
+};
+export type MessageRequestProps = {
+    requestNumber: number;
+};
