@@ -8,7 +8,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "favorite",
-                usersIcons: ["/cat1.png"],
+                usersIcons: ["/cat1.png", "/rabbit.png"],
                 tweetContent: "",
                 reactUsersName: ["user1", "user2"],
             },
@@ -17,6 +17,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "reply",
+                iconPath: "/rabbit.png",
                 userName: "testUser",
                 userId: "testId",
                 context: "testContext",
@@ -33,7 +34,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "retweet",
-                usersIcons: ["/cat1.png"],
+                usersIcons: ["/cat1.png", "/rabbit.png"],
                 tweetContent: "test",
                 reactUsersName: ["user1", "user2"],
             },
@@ -41,7 +42,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "favorite",
-                usersIcons: ["/cat1.png"],
+                usersIcons: ["/cat1.png", "/rabbit.png"],
                 tweetContent: "test",
                 reactUsersName: ["user1", "user2"],
             },
@@ -49,7 +50,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "favorite",
-                usersIcons: ["/cat1.png"],
+                usersIcons: ["/cat1.png", "/rabbit.png"],
                 tweetContent: "test",
                 reactUsersName: ["user1", "user2"],
             },
@@ -57,7 +58,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "favorite",
-                usersIcons: ["/cat1.png"],
+                usersIcons: ["/cat1.png", "/rabbit.png"],
                 tweetContent: "test",
                 reactUsersName: ["user1", "user2"],
             },
@@ -65,7 +66,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "favorite",
-                usersIcons: ["/cat1.png"],
+                usersIcons: ["/cat1.png", "/rabbit.png"],
                 tweetContent: "test",
                 reactUsersName: ["user1", "user2"],
             },
@@ -73,7 +74,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "favorite",
-                usersIcons: ["/cat1.png"],
+                usersIcons: ["/cat1.png", "/rabbit.png"],
                 tweetContent: "test",
                 reactUsersName: ["user1", "user2"],
             },
@@ -81,7 +82,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "favorite",
-                usersIcons: ["/cat1.png"],
+                usersIcons: ["/cat1.png", "/rabbit.png"],
                 tweetContent: "test",
                 reactUsersName: ["user1", "user2"],
             },
@@ -89,7 +90,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "favorite",
-                usersIcons: ["/cat1.png"],
+                usersIcons: ["/cat1.png", "/rabbit.png"],
                 tweetContent: "test",
                 reactUsersName: ["user1", "user2"],
             },
@@ -97,7 +98,7 @@ export default function Notification() {
         {
             contents: {
                 notificationType: "retweet",
-                usersIcons: ["/cat1.png"],
+                usersIcons: ["/cat1.png", "/rabbit.png"],
                 tweetContent: "test",
                 reactUsersName: ["user1", "user2"],
             },
@@ -111,6 +112,7 @@ export default function Notification() {
                         <Stack>
                             <Tweet
                                 userName={contents.userName}
+                                iconPath={contents.iconPath}
                                 userId={contents.userId}
                                 context={contents.context}
                                 likeCount={contents.likeCount}

@@ -5,12 +5,14 @@ import IosShareIcon from "@mui/icons-material/IosShare";
 import LockIcon from "@mui/icons-material/Lock";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
+import VerifiedIcon from "@mui/icons-material/Verified";
 import { Box, Grid, IconButton, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import { TweetPropsType } from "../Type/Type";
 export default function Tweet({
     userName,
     userId,
+    iconPath,
     context,
     likeCount,
     retweetCount,
@@ -20,21 +22,27 @@ export default function Tweet({
     isLocked,
     tweetType,
     replyTo,
+    isOfficial,
 }: TweetPropsType) {
     return (
         <Stack direction="row" spacing={0.5} sx={{ width: "100vw" }} p={1}>
             <Box p={0.5}>
                 <Image
-                    src="/cat1.png"
+                    src={iconPath}
                     alt="icon"
                     width={48}
                     height={48}
-                    className="rounded-full "
+                    className={isOfficial ? "rounded-md" : "rounded-full "}
                 />
             </Box>
             <Stack flexGrow={1}>
                 <Stack direction="row" spacing={0.5}>
                     <Typography variant="body1">{userName}</Typography>
+                    {isOfficial ? (
+                        <VerifiedIcon sx={{ fontSize: "20px" }} />
+                    ) : (
+                        <></>
+                    )}
                     {isLocked && (
                         <LockIcon
                             sx={{ fontSize: "16px", alignSelf: "center" }}
@@ -42,7 +50,7 @@ export default function Tweet({
                     )}
                     <Typography variant="body1">@{userId}</Typography>
                     <Typography flexGrow={1} variant="body1">
-                        ・{tweeted}
+                        {!isOfficial && "・" + tweeted}
                     </Typography>
                     <MoreHorizIcon sx={{ fontSize: "24px" }} />
                 </Stack>

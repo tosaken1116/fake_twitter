@@ -1,4 +1,5 @@
 export type TweetPropsType = {
+    iconPath: string;
     userName: string;
     userId: string;
     context: string;
@@ -8,6 +9,7 @@ export type TweetPropsType = {
     viewCount: number;
     tweeted: string;
     isLocked: boolean;
+    isOfficial?: boolean;
     tweetType?: string;
     replyTo?: string;
     notificationType?: "reply";

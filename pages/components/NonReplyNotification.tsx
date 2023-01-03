@@ -22,7 +22,7 @@ export default function NonReplyNotification({
                 )}
             </Box>
             <Stack>
-                <Stack>
+                <Stack direction="row">
                     {usersIcons.map((userIcon) => (
                         <Image
                             width={32}
