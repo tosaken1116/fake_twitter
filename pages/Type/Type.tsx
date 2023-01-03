@@ -41,3 +41,5 @@ export type FooterProps = {
     setNowPageName: (nowPage: string) => void;
     nowPage: string;
 };
+
+export type TweetButtonProps = Pick<HeaderProps, "nowPage">;

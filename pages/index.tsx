@@ -34,7 +34,7 @@ const Home: NextPage = () => {
                     <></>
                 )}
             </Box>
-            <TweetButton />
+            <TweetButton nowPage={nowPage} />
             <Footer setNowPageName={setNowPage} nowPage={nowPage} />
         </Stack>
     );
