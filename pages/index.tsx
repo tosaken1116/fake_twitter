@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     const [nowPage, setNowPage] = useState("home");
     return (
         <Stack sx={{ width: "100vw", maxHeight: "800px" }}>
-            <Header notified={true} />
+            <Header notified={true} nowPage={nowPage} />
             <Box
                 sx={{
                     zIndex: 0,

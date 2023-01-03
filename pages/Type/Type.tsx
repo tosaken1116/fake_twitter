@@ -14,6 +14,7 @@ export type TweetPropsType = {
 };
 export type HeaderProps = {
     notified: boolean;
+    nowPage: string;
 };
 export type NonReplyNotificationProps = {
     usersIcons: string[];
@@ -38,5 +39,5 @@ export type MessageRequestProps = {
 };
 export type FooterProps = {
     setNowPageName: (nowPage: string) => void;
-    nowPage: String;
+    nowPage: string;
 };
