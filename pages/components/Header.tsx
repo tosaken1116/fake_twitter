@@ -2,38 +2,38 @@ import FlareIcon from "@mui/icons-material/Flare";
 import SearchIcon from "@mui/icons-material/Search";
 import SettingsIcon from "@mui/icons-material/Settings";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { Box, Button, Grid, IconButton } from "@mui/material";
-import Image from "next/image";
+import { Avatar, Box, Button, Grid } from "@mui/material";
 import { HeaderProps } from "../Type/Type";
-export default function Header({ notified, nowPage }: HeaderProps) {
+export default function Header({
+    notified,
+    nowPage,
+    isSidebarOpen,
+    openSideBar,
+}: HeaderProps) {
     return (
         <Grid container direction="row" pt={1}>
-            <Grid item xs={1.5}>
-                <IconButton>
-                    <Box sx={{ position: "relative" }}>
-                        <Image
-                            src="/cat1.png"
-                            alt="icon"
-                            width={36}
-                            height={36}
-                            className="rounded-full "
-                        />
-                        {notified && (
-                            <Box
-                                sx={{
-                                    width: "10px",
-                                    height: "10px",
-                                    backgroundColor: "#1DA1F2",
-                                    position: "absolute",
-                                    border: "solid 2px white",
-                                    borderRadius: "9999px",
-                                    right: 0,
-                                    top: 0,
-                                }}
-                            ></Box>
-                        )}
-                    </Box>
-                </IconButton>
+            <Grid item xs={1.5} sx={{ position: "relative" }} p={1}>
+                <Button
+                    sx={{ width: "32px", height: "32px", padding: "0" }}
+                    className="rounded-full"
+                    onClick={openSideBar}
+                    startIcon={<Avatar src="/rabbit.png"></Avatar>}
+                ></Button>
+
+                {notified && (
+                    <Box
+                        sx={{
+                            width: "10px",
+                            height: "10px",
+                            backgroundColor: "#1DA1F2",
+                            position: "absolute",
+                            border: "solid 2px white",
+                            borderRadius: "9999px",
+                            right: "-5px",
+                            top: "5px",
+                        }}
+                    ></Box>
+                )}
             </Grid>
             {nowPage == "home" ? (
                 <Grid item xs={9} sx={{ textAlign: "center" }} pt={1}>

@@ -92,7 +92,7 @@ export default function Tweet({
                     </Grid>
                     <Grid item>
                         <Stack direction="row">
-                            <IconButton>
+                            <IconButton disabled={isLocked}>
                                 <AutorenewIcon sx={{ fontSize: "16px" }} />
                             </IconButton>
                             <Typography sx={{ placeSelf: "center" }}>

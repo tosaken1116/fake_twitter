@@ -17,6 +17,8 @@ export type TweetPropsType = {
 export type HeaderProps = {
     notified: boolean;
     nowPage: string;
+    openSideBar: () => void;
+    isSidebarOpen: boolean;
 };
 export type NonReplyNotificationProps = {
     usersIcons: string[];
@@ -45,3 +47,7 @@ export type FooterProps = {
 };
 
 export type TweetButtonProps = Pick<HeaderProps, "nowPage">;
+export type SideBarProps = {
+    isSidebarOpen: boolean;
+    closeSidebar: () => void;
+};
