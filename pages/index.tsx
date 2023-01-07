@@ -9,10 +9,12 @@ import Search from "./components/Search";
 import SideBar from "./components/SideBar";
 import TweetButton from "./components/TweetButton";
 import TweetHome from "./components/TweetHome";
+import TweetMake from "./components/TweetMake";
 
 const Home: NextPage = () => {
     const [nowPage, setNowPage] = useState("home");
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isTweetMakeOpen, setIsTweetMakeOpen] = useState(false);
     const closeSideBar = () => {
         setIsSidebarOpen(false);
     };
@@ -29,6 +31,10 @@ const Home: NextPage = () => {
                 isSidebarOpen={isSidebarOpen}
                 closeSidebar={closeSideBar}
             ></SideBar>
+            <TweetMake
+                isTweetMakeOpen={isTweetMakeOpen}
+                closeTweetMake={() => setIsTweetMakeOpen(false)}
+            />
             <Box
                 sx={{
                     zIndex: 0,
@@ -49,7 +55,10 @@ const Home: NextPage = () => {
                     <></>
                 )}
             </Box>
-            <TweetButton nowPage={nowPage} />
+            <TweetButton
+                nowPage={nowPage}
+                openTweetMake={() => setIsTweetMakeOpen(true)}
+            />
             <Footer setNowPageName={setNowPage} nowPage={nowPage} />
         </Stack>
     );

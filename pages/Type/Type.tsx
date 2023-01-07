@@ -46,8 +46,23 @@ export type FooterProps = {
     nowPage: string;
 };
 
-export type TweetButtonProps = Pick<HeaderProps, "nowPage">;
+export type TweetButtonProps = {
+    nowPage: string;
+    openTweetMake: () => void;
+};
 export type SideBarProps = {
     isSidebarOpen: boolean;
     closeSidebar: () => void;
+};
+export type TweetMakeProps = {
+    isTweetMakeOpen: boolean;
+    closeTweetMake: () => void;
+};
+
+export type TweetMakeHeaderProps = {
+    handleTweet: () => void;
+    isTweetDisable: boolean;
+};
+export type TweetMakeFooterProps = {
+    tweetTextLength: number;
 };

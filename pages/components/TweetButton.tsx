@@ -2,10 +2,10 @@ import AddIcon from "@mui/icons-material/Add";
 import { Box, IconButton } from "@mui/material";
 import { TweetButtonProps } from "../Type/Type";
 import MessageAddIcon from "./MessageAddIcon";
-export default function TweetButton({ nowPage }: TweetButtonProps) {
-    const openTweet = () => {
-        console.log("open tweet");
-    };
+export default function TweetButton({
+    nowPage,
+    openTweetMake,
+}: TweetButtonProps) {
     return (
         <Box
             sx={{
@@ -17,7 +17,7 @@ export default function TweetButton({ nowPage }: TweetButtonProps) {
                 right: "10px",
             }}
         >
-            <IconButton sx={{ color: "white" }} onClick={() => openTweet()}>
+            <IconButton sx={{ color: "white" }} onClick={() => openTweetMake()}>
                 {nowPage == "home" ||
                 nowPage == "search" ||
                 nowPage == "notification" ? (
