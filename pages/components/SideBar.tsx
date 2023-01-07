@@ -1,8 +1,10 @@
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import LockIcon from "@mui/icons-material/Lock";
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
+
 import { Box, Button, Divider, Drawer, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import { SideBarProps } from "../Type/Type";
@@ -14,6 +16,7 @@ export default function SideBar({ isSidebarOpen, closeSidebar }: SideBarProps) {
         userId: "testId",
         userFollor: 300,
         userFollwer: 300,
+        isLocked: true,
     };
     const icons = ["/rabbit.png", "/rabbit.png"];
     return (
@@ -63,7 +66,12 @@ export default function SideBar({ isSidebarOpen, closeSidebar }: SideBarProps) {
                             </Box>
                         </Stack>
                     </Stack>
-                    <Typography variant="h6">{testData.userName}</Typography>
+                    <Typography variant="h6">
+                        {testData.userName}
+                        {testData.isLocked && (
+                            <LockIcon sx={{ width: "20px" }}></LockIcon>
+                        )}
+                    </Typography>
                     <Typography variant="caption">
                         @{testData.userId}
                     </Typography>
@@ -116,14 +124,16 @@ export default function SideBar({ isSidebarOpen, closeSidebar }: SideBarProps) {
                                 Twitterサークル
                             </Typography>{" "}
                         </Button>
-                        <Button
-                            startIcon={<FollowRequestIcon />}
-                            sx={{ justifyContent: "left", color: "black" }}
-                        >
-                            <Typography variant="h6" pl={2}>
-                                フォローリクエスト
-                            </Typography>{" "}
-                        </Button>
+                        {testData.isLocked && (
+                            <Button
+                                startIcon={<FollowRequestIcon />}
+                                sx={{ justifyContent: "left", color: "black" }}
+                            >
+                                <Typography variant="h6" pl={2}>
+                                    フォローリクエスト
+                                </Typography>{" "}
+                            </Button>
+                        )}
                     </Stack>
                     <Divider></Divider>
                     <Stack spacing={2} pt={3}>
